@@ -320,9 +320,10 @@ def chat_msg():
     return jsonify({'status': 'OK', 'answer': response})
 
 
+
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
     app.run(debug=True, port=3000)
-        disease_details = getDiseaseInfo(predicted_disease)
-        return f"<b>{predicted_disease}</b>
+
+
