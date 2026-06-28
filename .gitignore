@@ -52,3 +52,7 @@ __pycache__/
 
 # VS Code
 .vscode/
+*.db
+instance/
+*.db
+instance/

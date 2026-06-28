@@ -96,7 +96,7 @@ def predict_disease_from_symptom(symptom_list):
         df_test = pd.DataFrame([list(s_dict.values())], columns=list(s_dict.keys()))
         
         # ML model parsing execution
-        clf = load("model/random_forest.joblib")
+        clf = load(BASE_DIR / "model" / "random_forest.joblib")
         result = clf.predict(df_test)
         predicted_disease = result[0]
         
