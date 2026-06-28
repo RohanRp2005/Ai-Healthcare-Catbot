@@ -22,8 +22,10 @@ app.secret_key = "m4xpl0it"
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-userSession = {}
+with app.app_context():
+    db.create_all()
 
+userSession = {}
 def make_token():
     return secrets.token_urlsafe(16) 
 
@@ -321,6 +323,4 @@ def chat_msg():
 
 
 if __name__ == "__main__":
-    with app.app_context():
-        db.create_all()
     app.run(debug=True, port=3000)
