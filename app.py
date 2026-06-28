@@ -22,6 +22,13 @@ app.secret_key = "m4xpl0it"
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
+class user(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(150), nullable=False, unique=True)
+    email = db.Column(db.String(150), nullable=False, unique=True)
+    password = db.Column(db.String(150), nullable=False)
+
+# 👇 Isko yahan shift karo
 with app.app_context():
     db.create_all()
 
